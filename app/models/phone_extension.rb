@@ -1,0 +1,2 @@
+class PhoneExtension < ApplicationRecord
+end

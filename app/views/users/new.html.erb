@@ -1,0 +1,23 @@
+<div class="container margin-top-10-percent">
+  <div class="card">
+    <div class="card-header"><b> Step 1 </b></div>
+      <div class="card-body" >
+        <%= simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+          <%= f.input :name, :required => true, :placeholder=> "Full name" %>
+          <%= f.input :phone_extension_id, collection: PhoneExtension.all, value_method: :id, label_method: :code,
+                      :prompt => "- Select country code -", :required => true %>
+          <%= f.input :phone, :placeholder=> "Phone number", :required => true
+                     %>
+          <%= f.input :blood_group, collection: [["A1+", "A1+"],["A1-", "A1-"], ["A2+", "A2+"],["A2-", "A2-"],
+                                                 ["B+", "B+"],["B-", "B-"],["A1B+", "A1B+"],["A1B-", "A1B-"],
+                                                 ["A2B+", "A2B+"],["A2B-", "A2B-"],["AB+", "AB+"],
+                                                 ["AB-", "AB-"],["O+", "O+"],["O-", "O-"],["A+", "A+"],
+                                                 ["A-", "A-"]], value: @user.blood_group,
+                      include_blank: "- Choose blood group -" %>
+          <%= f.button :submit, "Continue", :class => 'btn btn-primary' %>
+          <%= link_to "Cancel donor", :back, :class => 'btn btn-default' %>
+          <% end %>
+     </div>
+   </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <!--  <div class='row'>-->
+  <div class="col-md-6">
+    <div class="panel panel-danger">
+      <div class="panel-heading"><b> Step 2 </b></div>
+      <div class="panel-body" >
+        <%= simple_form_for @user_otp_code do |f| %>
+          <div class="form-group">
+            <%= f.label :otp_no, label: 'Enter OTP', class: "control-label" %>
+            <%= f.input :otp_no, :placeholder=> "----", :required => true, input_html: { style:  "width: 50%;"},
+                        label: false  %>
+          </div>
+          <div class="form-group">
+            <%= f.button :submit, "Continue", :class => 'btn btn-primary' %>
+            <%= link_to "Back to step 1", :back, :class => 'btn btn-default' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!--  </div>-->
+</div>

@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <%= link_to "New donor", new_user_path, class: "btn btn-primary btn-small"  %>
+    </div>
+  </div>
+</div>
+<% @users.each do |user| %>
+  <br>
+    Name :&nbsp;<%= user.name %> <br>
+    Blood group :&nbsp;<%= user.blood_group %> <br>
+    Phone number :&nbsp; <%= user.phone %> <br>
+<% end %>
+
+
+
+
